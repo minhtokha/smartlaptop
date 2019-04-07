@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2019 10:23:50 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Ctdonhang" table="ctdonhang" catalog="heroku_c14f2d4ecaafd11" optimistic-lock="version">
+        <id name="mactdh" type="java.lang.Integer">
+            <column name="mactdh" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="donhang" class="domain.Donhang" fetch="select">
+            <column name="madh" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sanpham" class="domain.Sanpham" fetch="select">
+            <column name="masanpham" not-null="true" />
+        </many-to-one>
+        <property name="soluong" type="int">
+            <column name="soluong" not-null="true" />
+        </property>
+        <property name="gia" type="double">
+            <column name="gia" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="sotien" type="double">
+            <column name="sotien" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

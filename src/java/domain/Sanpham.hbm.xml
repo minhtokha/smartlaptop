@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2019 10:23:50 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Sanpham" table="sanpham" catalog="heroku_c14f2d4ecaafd11" optimistic-lock="version">
+        <id name="masp" type="java.lang.Integer">
+            <column name="masp" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="loaisanpham" class="domain.Loaisanpham" fetch="select">
+            <column name="maloai" />
+        </many-to-one>
+        <many-to-one name="nhasanxuat" class="domain.Nhasanxuat" fetch="select">
+            <column name="mansx" not-null="true" />
+        </many-to-one>
+        <property name="ten" type="string">
+            <column name="ten" length="100" not-null="true" />
+        </property>
+        <property name="mota" type="string">
+            <column name="mota" length="1000" not-null="true" />
+        </property>
+        <property name="hinhanh" type="string">
+            <column name="hinhanh" length="100" not-null="true" />
+        </property>
+        <property name="gia" type="double">
+            <column name="gia" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="luongton" type="int">
+            <column name="luongton" not-null="true" />
+        </property>
+        <set name="ctdonhangs" table="ctdonhang" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="masanpham" not-null="true" />
+            </key>
+            <one-to-many class="domain.Ctdonhang" />
+        </set>
+    </class>
+</hibernate-mapping>

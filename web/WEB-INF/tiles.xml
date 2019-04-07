@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+<tiles-definitions>  
+    <definition name="index"  
+        template="/WEB-INF/jsp/template/home_layout.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/jsp/catelog/header.jsp" />  
+        <put-attribute name="menu" value="/WEB-INF/jsp/catelog/menu.jsp" />
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/content.jsp" />  
+        <put-attribute name="footer" value="/WEB-INF/jsp/catelog/footer.jsp" />  
+    </definition>  
+  
+    <definition name="product" extends="index">  
+        <put-attribute name="title" value="product" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/product/productDetails.jsp" />  
+    </definition>
+    <definition name="dichvu" extends="index">  
+        <put-attribute name="title" value="Thong tin dich vu" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/dichvu/dichvu.jsp" />  
+    </definition>
+    <definition name="dichvudetail" extends="index">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/dichvu/dichvudetail.jsp" />  
+    </definition>
+    
+    
+    <definition name="productOfCategory" extends="index">  
+        <put-attribute name="title" value="product" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/product/productOfCategory.jsp" />  
+    </definition>
+    
+    <definition name="cartIndex" extends="index">  
+        <put-attribute name="title" value="cart" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/cart/cartIndex.jsp" />  
+    </definition>
+     
+     <definition name="checkout" extends="index">  
+        <put-attribute name="title" value="checkout" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/cart/checkout.jsp" />  
+    </definition>
+    
+    <!-- account-->
+    <definition name="dangky" extends="index">  
+        <put-attribute name="title" value="Dang Ky Tai Khoan" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/account/dangky.jsp" />  
+    </definition>
+    <definition name="dangnhap" extends="index">  
+        <put-attribute name="title" value="Dang Nhap Tai Khoan" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/account/dangnhap.jsp" />  
+    </definition>
+    
+    <definition name="myaccount" extends="index">  
+        <put-attribute name="title" value="Tai Khoai Cua Toi" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/account/myaccount.jsp" />  
+    </definition>
+    
+    <definition name="quanlydonhang" extends="index">  
+        <put-attribute name="title" value="Don hang cua toi" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/account/donhang.jsp" />  
+    </definition>
+    <definition name="diachi" extends="index">  
+        <put-attribute name="title" value="Dia chia" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/catelog/account/diachi.jsp" />  
+    </definition>
+    <!-- end account-->
+     
+     
+    <definition name="admin"  
+        template="/WEB-INF/jsp/template/admin_layout.jsp">  
+        <put-attribute name="title" value="Trang Admin" />  
+        <put-attribute name="header" value="/WEB-INF/jsp/admin/header.jsp" />  
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/content.jsp" />  
+        <put-attribute name="footer" value="/WEB-INF/jsp/admin/footer.jsp" />  
+    </definition>  
+    <definition name="quanly_sanpham" extends="admin">
+        <put-attribute name="title" value="Quan Ly San Pham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/product/dssanpham.jsp" />   
+    </definition>
+    <definition name="sanphamform" extends="admin">
+        <put-attribute name="title" value="Quan Ly San Pham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/product/sanphamform.jsp" />   
+    </definition>
+    <definition name="detail" extends="admin">
+        <put-attribute name="title" value="Quan Ly San Pham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/product/detail.jsp" />   
+    </definition>
+    
+    <definition name="donhang" extends="admin">
+        <put-attribute name="title" value="Quản lý đơn hàng" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/donhang/dsdonhang.jsp" />   
+    </definition>
+    <definition name="chitietdonhang" extends="admin">
+        <put-attribute name="title" value="Chi tiết đơn hàng" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/donhang/donhangdetail.jsp" />   
+    </definition>
+    <definition name="loaisanpham" extends="admin">
+        <put-attribute name="title" value="Quản lý loai sanpham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/loaisanpham/dsloaisanpham.jsp" />   
+    </definition>
+  <definition name="loaisanphamform" extends="admin">
+        <put-attribute name="title" value="Quản lý loai sanpham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/loaisanpham/loaisanphamform.jsp" />   
+    </definition>
+    
+    <definition name="nhasanxuatform" extends="admin">
+        <put-attribute name="title" value="Quản lý loai sanpham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/nhasanxuat/nhasanxuatform.jsp" />   
+    </definition>
+    
+    <definition name="nhasanxuat" extends="admin">
+        <put-attribute name="title" value="Quản lý loai sanpham" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/nhasanxuat/dsnhasanxuat.jsp" />   
+    </definition>
+    <definition name="dsdv" extends="admin">
+        <put-attribute name="title" value="Quản lý dich vu" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/dichvu/dsdv.jsp" />   
+    </definition>
+    <definition name="dichvuform" extends="admin">
+        <put-attribute name="title" value="Quản lý dich vu" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/dichvu/dichvuform.jsp" />   
+    </definition>
+    <definition name="thongke" extends="admin">
+        <put-attribute name="title" value="Thong ke doanh thu" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin/thongke/thongke.jsp" />   
+    </definition>
+  <definition name="login"  
+        template="/WEB-INF/jsp/admin/login.jsp">  
+        
+    </definition> 
+</tiles-definitions> 

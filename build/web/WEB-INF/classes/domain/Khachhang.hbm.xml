@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2019 10:23:50 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Khachhang" table="khachhang" catalog="heroku_c14f2d4ecaafd11" optimistic-lock="version">
+        <id name="makh" type="java.lang.Integer">
+            <column name="makh" />
+            <generator class="identity" />
+        </id>
+        <property name="password" type="string">
+            <column name="password" length="50" />
+        </property>
+        <property name="tenkhachhang" type="string">
+            <column name="tenkhachhang" length="100" />
+        </property>
+        <property name="diachi" type="string">
+            <column name="diachi" length="200" />
+        </property>
+        <property name="sdt" type="string">
+            <column name="sdt" length="30" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <set name="donhangs" table="donhang" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="makh" not-null="true" />
+            </key>
+            <one-to-many class="domain.Donhang" />
+        </set>
+    </class>
+</hibernate-mapping>

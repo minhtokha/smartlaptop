@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://us-cdbr-iron-east-03.cleardb.net:3306/heroku_c14f2d4ecaafd11?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">b23bf2f5e9256f</property>
+    <property name="hibernate.connection.password">3a3e1305</property>
+    <mapping resource="domain/Nhasanxuat.hbm.xml"/>
+    <mapping resource="domain/Ctdonhang.hbm.xml"/>
+    <mapping resource="domain/Thongtindichvu.hbm.xml"/>
+    <mapping resource="domain/Sanpham.hbm.xml"/>
+    <mapping resource="domain/Loaisanpham.hbm.xml"/>
+    <mapping resource="domain/User.hbm.xml"/>
+    <mapping resource="domain/Donhang.hbm.xml"/>
+    <mapping resource="domain/Khachhang.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

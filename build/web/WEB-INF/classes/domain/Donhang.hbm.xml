@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2019 10:23:50 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Donhang" table="donhang" catalog="heroku_c14f2d4ecaafd11" optimistic-lock="version">
+        <id name="madh" type="java.lang.Integer">
+            <column name="madh" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="khachhang" class="domain.Khachhang" fetch="select">
+            <column name="makh" not-null="true" />
+        </many-to-one>
+        <property name="tenkhachhang" type="string">
+            <column name="tenkhachhang" length="100" not-null="true" />
+        </property>
+        <property name="ngaydh" type="date">
+            <column name="ngaydh" length="10" not-null="true" />
+        </property>
+        <property name="diachi" type="string">
+            <column name="diachi" length="200" not-null="true" />
+        </property>
+        <property name="sdt" type="string">
+            <column name="sdt" length="30" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true" />
+        </property>
+        <property name="tongtien" type="double">
+            <column name="tongtien" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="ngaygiao" type="date">
+            <column name="ngaygiao" length="10" />
+        </property>
+        <property name="tinhtrang" type="int">
+            <column name="tinhtrang" not-null="true" />
+        </property>
+        <set name="ctdonhangs" table="ctdonhang" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="madh" not-null="true" />
+            </key>
+            <one-to-many class="domain.Ctdonhang" />
+        </set>
+    </class>
+</hibernate-mapping>

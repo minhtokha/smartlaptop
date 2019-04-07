@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 7, 2019 10:23:50 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="domain.Loaisanpham" table="loaisanpham" catalog="heroku_c14f2d4ecaafd11" optimistic-lock="version">
+        <id name="maloai" type="java.lang.Integer">
+            <column name="maloai" />
+            <generator class="identity" />
+        </id>
+        <property name="tenloai" type="string">
+            <column name="tenloai" length="100" not-null="true" />
+        </property>
+        <property name="mota" type="string">
+            <column name="mota" length="500" not-null="true" />
+        </property>
+        <set name="sanphams" table="sanpham" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="maloai" />
+            </key>
+            <one-to-many class="domain.Sanpham" />
+        </set>
+    </class>
+</hibernate-mapping>
